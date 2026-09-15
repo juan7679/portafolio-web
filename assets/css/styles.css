@@ -1,0 +1,30 @@
+:root{
+  --bg: #EEF1F3;
+  --ink: #16232F;
+  --ink-soft: #4A5A68;
+  --navy: #101B29;
+  --blue: #2A5C8A;
+  --amber: #D9A441;
+  --line: #C9D2D8;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3{
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 0;
+}
+
+.wrap{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
