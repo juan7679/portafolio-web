@@ -119,3 +119,14 @@ section{ padding: 64px 0; }
   cursor: pointer;
   align-self: flex-start;
 }
+
+/* RESPONSIVE */
+@media (max-width: 640px){
+  .wrap{ padding: 0 20px; }
+
+  section{ padding: 40px 0; }
+
+  header.wrap h1{ font-size: 1.7rem; }
+
+  .section-contact form{ max-width: 100%; }
+}
