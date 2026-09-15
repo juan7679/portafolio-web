@@ -4,6 +4,7 @@
   --ink-soft: #4A5A68;
   --navy: #101B29;
   --blue: #2A5C8A;
+  --blue-soft: #E8EFF5;
   --amber: #D9A441;
   --line: #C9D2D8;
 }
@@ -31,6 +32,72 @@ h1, h2, h3{
 
 section{ padding: 64px 0; }
 
+section > h2{
+  font-size: 1.9rem;
+  margin-bottom: 36px;
+}
+
+/* INICIO / HERO */
+.hero{
+  background: var(--navy);
+  color: #EAF0F5;
+  padding: 90px 0;
+}
+
+.hero-eyebrow{
+  color: var(--blue);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 0 16px;
+}
+
+.hero h1{
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  max-width: 16ch;
+}
+
+.hero-lead{
+  color: #B7C4D0;
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin: 20px 0 0;
+}
+
+.hero-actions{
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: background-color .15s ease, border-color .15s ease, transform .1s ease;
+}
+
+.btn-primary{
+  background: var(--amber);
+  color: #1A1204;
+}
+.btn-primary:hover{ background: #C7943A; }
+
+.btn-ghost{
+  border: 1px solid #3A4C5F;
+  color: #EAF0F5;
+}
+.btn-ghost:hover{
+  border-color: var(--blue);
+  background: rgba(255,255,255,0.04);
+}
+
+.btn:active{ transform: scale(0.98); }
+
 /* SOBRE MÍ */
 .section-about .stack-groups{ margin-top: 24px; }
 .section-about h4{
@@ -43,13 +110,23 @@ section{ padding: 64px 0; }
   margin-bottom: 18px;
 }
 
-/* SERVICIOS */
+/* SERVICIOS — tarjeta con profundidad */
 .section-services{ background: #E4E9EC; }
+
 .service-item{
-  padding: 24px 0;
-  border-top: 1px solid var(--line);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px 26px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(16, 27, 41, 0.05);
+  transition: box-shadow .18s ease, transform .18s ease;
 }
-.service-item:last-child{ border-bottom: 1px solid var(--line); }
+.service-item:last-child{ margin-bottom: 0; }
+.service-item:hover{
+  box-shadow: 0 10px 24px rgba(16, 27, 41, 0.09);
+  transform: translateY(-2px);
+}
 .service-item h3{
   font-size: 1.15rem;
   border-left: 3px solid var(--blue);
@@ -58,19 +135,38 @@ section{ padding: 64px 0; }
 }
 .service-item p{ color: var(--ink-soft); margin: 0; max-width: 60ch; }
 
-/* PORTAFOLIO */
+/* PORTAFOLIO — tarjeta con profundidad + badges */
 .project-item{
-  padding: 28px 0;
-  border-top: 1px solid var(--line);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 26px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(16, 27, 41, 0.05);
+  transition: box-shadow .18s ease, transform .18s ease;
 }
-.project-item:last-child{ border-bottom: 1px solid var(--line); }
-.project-item h3{ font-size: 1.25rem; margin-bottom: 6px; }
+.project-item:last-child{ margin-bottom: 0; }
+.project-item:hover{
+  box-shadow: 0 10px 24px rgba(16, 27, 41, 0.09);
+  transform: translateY(-2px);
+}
+.project-item h3{ font-size: 1.25rem; margin-bottom: 10px; }
+
 .project-tags{
-  font-size: 0.85rem;
-  color: var(--blue);
-  margin: 0 0 10px;
+  margin: 0 0 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.project-item p:not(.project-tags){ color: var(--ink-soft); }
+.badge{
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.project-item p:not(.project-tags){ color: var(--ink-soft); margin: 0; }
 
 /* CONTACTO */
 .section-contact{
@@ -89,6 +185,7 @@ section{ padding: 64px 0; }
   color: #EAF0F5;
   text-decoration: none;
   font-weight: 500;
+  transition: color .15s ease;
 }
 .contact-links a:hover{ color: var(--amber); }
 
@@ -108,6 +205,12 @@ section{ padding: 64px 0; }
   color: #EAF0F5;
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
+  transition: border-color .15s ease;
+}
+.section-contact input:focus,
+.section-contact textarea:focus{
+  border-color: var(--blue);
+  outline: none;
 }
 .section-contact button{
   background: var(--amber);
@@ -118,7 +221,10 @@ section{ padding: 64px 0; }
   font-weight: 600;
   cursor: pointer;
   align-self: flex-start;
+  transition: background-color .15s ease, transform .1s ease;
 }
+.section-contact button:hover{ background: #C7943A; }
+.section-contact button:active{ transform: scale(0.98); }
 
 /* RESPONSIVE */
 @media (max-width: 640px){
@@ -126,7 +232,11 @@ section{ padding: 64px 0; }
 
   section{ padding: 40px 0; }
 
-  header.wrap h1{ font-size: 1.7rem; }
+  .hero{ padding: 60px 0; }
+
+  header.hero h1{ font-size: 1.7rem; }
+
+  .service-item, .project-item{ padding: 20px; }
 
   .section-contact form{ max-width: 100%; }
 }
