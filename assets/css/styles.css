@@ -28,3 +28,94 @@ h1, h2, h3{
   margin: 0 auto;
   padding: 0 32px;
 }
+
+section{ padding: 64px 0; }
+
+/* SOBRE MÍ */
+.section-about .stack-groups{ margin-top: 24px; }
+.section-about h4{
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.section-about p{
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+/* SERVICIOS */
+.section-services{ background: #E4E9EC; }
+.service-item{
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.service-item:last-child{ border-bottom: 1px solid var(--line); }
+.service-item h3{
+  font-size: 1.15rem;
+  border-left: 3px solid var(--blue);
+  padding-left: 14px;
+  margin-bottom: 8px;
+}
+.service-item p{ color: var(--ink-soft); margin: 0; max-width: 60ch; }
+
+/* PORTAFOLIO */
+.project-item{
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+.project-item:last-child{ border-bottom: 1px solid var(--line); }
+.project-item h3{ font-size: 1.25rem; margin-bottom: 6px; }
+.project-tags{
+  font-size: 0.85rem;
+  color: var(--blue);
+  margin: 0 0 10px;
+}
+.project-item p:not(.project-tags){ color: var(--ink-soft); }
+
+/* CONTACTO */
+.section-contact{
+  background: var(--navy);
+  color: #EAF0F5;
+}
+.section-contact h2{ color: #fff; }
+.section-contact p{ color: #B7C4D0; }
+.contact-links{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 30px;
+}
+.contact-links a{
+  color: #EAF0F5;
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact-links a:hover{ color: var(--amber); }
+
+.section-contact form{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 480px;
+}
+.section-contact label{ font-size: 0.85rem; color: #B7C4D0; }
+.section-contact input,
+.section-contact textarea{
+  background: #182739;
+  border: 1px solid #2C3F53;
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: #EAF0F5;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+.section-contact button{
+  background: var(--amber);
+  color: #1A1204;
+  border: none;
+  padding: 13px 26px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+}
