@@ -38,6 +38,12 @@ section > .wrap h2:first-child{
   margin-bottom: 36px;
 }
 
+/* Campo trampa para bots, oculto visualmente */
+.hidden-field{
+  position: absolute;
+  left: -9999px;
+}
+
 /* NAVBAR */
 .navbar{
   position: sticky;
