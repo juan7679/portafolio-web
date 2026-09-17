@@ -177,7 +177,7 @@
           <a href="https://www.linkedin.com/in/juancarloszunigaalfaro/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <form name="contacto" method="POST" action="/es/index.html" data-netlify="true" netlify-honeypot="bot-field">
+      <form name="contacto" id="contactForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contacto">
         <p class="hidden-field">
           <label>No llenar este campo si eres humano: <input name="bot-field"></label>
@@ -198,6 +198,20 @@
       </form>
     </div>
   </section>
+
+  <!-- MODAL DE CONFIRMACIÓN -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <div class="modal-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12.5L9 17.5L20 6.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>¡Mensaje enviado!</h3>
+      <p>Gracias por escribirme. Te respondo en menos de 24 horas.</p>
+      <button class="btn btn-primary" id="modalClose">Cerrar</button>
+    </div>
+  </div>
 
   <script src="/assets/js/main.js"></script>
 </body>
