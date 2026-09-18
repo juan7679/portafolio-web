@@ -14,25 +14,39 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOverlay.classList.remove('is-visible');
   }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-    const formData = new FormData(form);
+  // 1. Usamos FormData asegurando la codificación correcta
+  const formData = new FormData(form);
+  
+  // Aseguramos que el nombre del formulario siempre esté presente
+  if (!formData.get('form-name')) {
+    formData.append('form-name', 'contacto');
+  }
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
-    })
-      .then(() => {
+  const data = new URLSearchParams(formData).toString();
+
+  // 2. Enviamos la petición indicando el action o la ruta del sitio
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: data
+  })
+    .then((response) => {
+      
+      if (response.ok) {
         form.reset();
         openModal();
-      })
-      .catch((error) => {
-        console.error('Error al enviar el formulario:', error);
-        alert('Hubo un problema al enviar tu mensaje. Intenta de nuevo o escríbeme directo por correo.');
-      });
-  });
+      } else {
+        throw new Error(`Error en el servidor: ${response.status}`);
+      }
+    })
+    .catch((error) => {
+      console.error('Error al enviar el formulario:', error);
+      alert('Hubo un problema al enviar tu mensaje. Intenta de nuevo o escríbeme directo por correo.');
+    });
+});
 
   modalClose.addEventListener('click', closeModal);
 
