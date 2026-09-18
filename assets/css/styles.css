@@ -237,6 +237,38 @@ section > .wrap h2:first-child{
 }
 .project-item p:not(.project-tags){ color: var(--ink-soft); margin: 0; }
 
+.badge-demo{
+  background: #E5F3EA;
+  color: #2E7D4F;
+  font-weight: 600;
+}
+
+.demo-box{
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+}
+.demo-credentials{
+  font-size: 0.85rem;
+  color: var(--ink) !important;
+  margin: 0 0 6px !important;
+}
+.demo-credentials strong{
+  font-family: 'Space Grotesk', monospace;
+}
+.demo-note{
+  font-size: 0.78rem;
+  color: var(--ink-soft) !important;
+  margin: 0 0 14px !important;
+}
+.btn-demo{
+  background: #2E7D4F;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+}
+.btn-demo:hover{ background: #256640; }
+
 /* CONTACTO */
 .section-contact{
   background: var(--navy);
